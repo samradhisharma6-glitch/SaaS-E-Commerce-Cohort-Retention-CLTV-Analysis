@@ -209,19 +209,17 @@ FROM CohortCounts c
 INNER JOIN CohortSize s
     ON c.CohortMonth = s.CohortMonth;
 
-    -----------------------------------------------------------
+--------------------------------------------------------------
     SELECT TOP 20 *
 FROM RetentionMatrix
 ORDER BY CohortMonth, CohortIndex;
 ---------------------------------------------------------------------
 
-SELECT TOP 20 *
-FROM RetentionMatrix
-ORDER BY CohortMonth, CohortIndex;
-
---------------------------------------------------------
 SELECT *
 FROM RetentionMatrix
 WHERE CohortIndex = 0;
 -----------------------------------------------------------
 SELECT * FROM RetentionMatrix
+
+
+-------------------------------------------------------------------
