@@ -16,9 +16,7 @@ Week 1: Data Cleaning \& Wrangling Report
 
 
 
-**Week 1 Outcome**
-
-
+week 1 outcome
 
 Successfully transformed raw retail transaction data into a clean, structured, and analysis-ready dataset suitable for cohort retention analysis, customer behaviour tracking, and future CLTV calculations.
 
