@@ -8,6 +8,7 @@ EXEC sp_rename 'online_retail_final_cleaned', 'Online_Retail';
 
 SELECT *
 FROM Online_Retail
+-------------------------------------------------------------------------------
 
 --Issue 13: Invoice Month
 ALTER TABLE online_retail
@@ -20,7 +21,7 @@ DATEFROMPARTS(
     MONTH(InvoiceDate),
     1
 );
-
+------------------------------------------------------------------------------
 --Issue 14: First Purchase Date
 
 SELECT
@@ -29,7 +30,7 @@ SELECT
 INTO CustomerFirstPurchase
 FROM online_retail
 GROUP BY [CustomerID];
-
+----------------------------------------------------------------------------------
 --Issue 15: Cohort Month
 SELECT
     CustomerID,
@@ -40,7 +41,7 @@ SELECT
     ) AS CohortMonth
 INTO CustomerCohort
 FROM CustomerFirstPurchase;
-
+-----------------------------------------------------------------------------------
 --Issue 16: Cohort Index
 SELECT
     r.[Customer ID] AS CustomerID,
@@ -58,7 +59,7 @@ INTO CohortData
 FROM online_retail r
 JOIN CustomerCohort c
 ON r.[Customer ID] = c.CustomerID;
-
+--------------------------------------------------------------------------------------
 --Issue 17: Active Customers
 SELECT
     CohortMonth,
@@ -72,7 +73,7 @@ FROM CohortData
 GROUP BY
     CohortMonth,
     CohortIndex;
-
+    ----------------------------------------------------------------------
 
     --Issue 18: Retention Matrix Source
     SELECT *
